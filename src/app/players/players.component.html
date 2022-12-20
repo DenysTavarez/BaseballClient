@@ -1,0 +1,26 @@
+<h1>players</h1>
+<p>Here's a list of players: feel free to play with it.</p>
+<p *ngIf="!players"><em>Loading...</em></p>
+<!-- <button mat-flat-button color="primary" class="btn-add" *ngIf="players" [routerLink]="['/player-edit']">
+  Add a new player
+</button> -->
+<table class='table table-striped' aria-labelledby="tableLabel" [hidden]="!players">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Age</th>
+      <th>Team Name</th>
+      <th>Games Played</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let player of players?.players">
+      <!-- <td><a [routerLink]="['/player-edit', player.id]">{{player.id}}</a></td> -->
+      <td>{{ player.name }}</td>
+      <td>{{ player.age }}</td>
+      <td>{{ player.teamName }}</td>
+      <td>{{ player.gamesPlayed }}</td>
+    </tr>
+  </tbody>
+</table>

@@ -1,0 +1,25 @@
+<h1>Teams</h1>
+<p>Here's a list of Teams and their ranking</p>
+<button mat-flat-button color="primary" class="btn-add" >
+  Add a new team
+</button>
+<table class='table table-striped' aria-labelledby="tableLabel" [hidden]="!teams">
+  <thead>
+    <tr>
+      <th></th>
+      <th>ID</th>
+      <th>TeamName</th>
+      <th>TeamRank</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let team of teams">
+      <td><a [routerLink]="['/team-edit', team.id]"><fa-icon [icon]="faPencil"></fa-icon></a></td>
+      <td><a [routerLink]="['/teampopulation', team.id]">{{team.id}}</a></td>
+      <td><a [routerLink]="['/players', team.id]">{{ team.teamName }}</a></td>
+      <td>{{ team.teamRank }}</td>
+     
+    </tr>
+  </tbody>
+</table>
